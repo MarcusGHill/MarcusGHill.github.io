@@ -4,4 +4,4 @@
 
 layout: home
 ---
-# Blogg for beginners in DOM and javascript. 
+# Blog for beginners in DOM and javascript. 

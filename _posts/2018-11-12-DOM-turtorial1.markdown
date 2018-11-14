@@ -7,12 +7,28 @@ author: "Marcus"
 permalink: "/step1.html"
 ---
 
-In my experience the best way to learn is to teach others, that's why this blog will be dedicated to teching the DOM, javascript, HTML CSS and how to manipulate the DOM with javascript.
-This blogg will be a short turtorial to DOM and javascript and what you need to know to be able to make anything webbpage related.
+**In my experience the best way to learn is to try to teach others**
+that's why this blog will be dedicated to teching the DOM, javascript, HTML CSS and how to manipulate the DOM with javascript.
+This blog will be a short turtorial to DOM and javascript and what you need to know to manipulate the DOM with javascript.
 
 I will assume that you already have basic knowledge of Javascript, HTML and css.
 
-DOM is short for DOCUMENT OBJECT MODEL. The DOM is a tree of nodes/Elemnts created in HTML by the browser. Javascript can be used to read/write and manipulate the DOM. 
+First of all we'll need to link our javascript code to our HTML page. We do this by adding the following code right before our closing head tag.
+**(for modern browsers)**, Old bowsers will skip this.
+
+{% highlight ruby %}
+/* in this case the app.js file is stored in the js folder. */
+<script type="module" src="js/app.js"></script>
+{% endhighlight %}
+
+In order to get some back compability we add  the nomodule script tag right before the closing body tag  **(for old browsers)**, modern bowsers will skip this.
+This works if you got webbpack installed as webbpack rebuilds your code to match older bowsers compability.
+{% highlight ruby %}
+<script nomodule src="build.js"></script>
+{% endhighlight %}
+___
+
+DOM is short for DOCUMENT OBJECT MODEL. The DOM is a tree of nodes/Elements created in HTML by the browser. Javascript can be used to read/write and manipulate the DOM. 
 
 if a element nests inside another element it is considered a child of the element it nests inside of. example:
 
