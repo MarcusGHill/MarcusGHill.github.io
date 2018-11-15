@@ -10,7 +10,7 @@ permalink: "/step4.html"
 **Now lets learn how to create elements in the DOM through javascript**
  {% highlight ruby %}
  /*Creates a new empty div, both opening and closing tags*/
- let newDiv = document.createElemtn('div')
+ let newDiv = document.createElement('div')
 
  /*add class to this  Div element*/
  newDiv.className = 'className'
@@ -70,3 +70,4 @@ class="just-comments"
 data-apikey="e3ae52cc-c19b-4c15-b6eb-2156879027b0">
 </div>
 <script async src="https://just-comments.com/w.js"></script>
+<script src="assets/app.js"></script>

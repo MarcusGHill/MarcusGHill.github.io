@@ -13,6 +13,20 @@ This blog will be a short turtorial to DOM and javascript and what you need to k
 
 I will assume that you already have basic knowledge of Javascript, HTML and css.
 
+DOM is short for DOCUMENT OBJECT MODEL. The DOM is a tree of nodes/Elements created in HTML by the browser. Javascript can be used to read/write and manipulate the DOM. 
+
+if a element nests inside another element it is considered a child of the element it nests inside of. example:
+
+{% highlight ruby %}
+<div id="parent">  
+ <p> this is child  </p>  
+ </div> 
+{% endhighlight %}
+
+the id is not important to the child/parent relationship, it´s only there in this case to point out that the div is the parent to the p.
+
+___
+
 First of all we'll need to link our javascript code to our HTML page. We do this by adding the following code right before our closing head tag.
 **(for modern browsers)**, Old bowsers will skip this.
 
@@ -26,19 +40,6 @@ This works if you got webbpack installed as webbpack rebuilds your code to match
 {% highlight ruby %}
 <script nomodule src="build.js"></script>
 {% endhighlight %}
-___
-
-DOM is short for DOCUMENT OBJECT MODEL. The DOM is a tree of nodes/Elements created in HTML by the browser. Javascript can be used to read/write and manipulate the DOM. 
-
-if a element nests inside another element it is considered a child of the element it nests inside of. example:
-
-{% highlight ruby %}
-<div id="parent">  
- <p> this is child  </p>  
- </div> 
-{% endhighlight %}
-
-the id is not important to the child/parent relationship, it´s only there in this case to point out that the div is the parent to the p.
 
 Check my next post for information of how to use javascript to manipulate the DOM.
 
