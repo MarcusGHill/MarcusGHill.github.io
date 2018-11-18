@@ -92,7 +92,10 @@ let thisWillBeTheH2 = itemList.previousElementSibling
 thisWillBeTheH2.style.color = 'red'
  {% endhighlight %}
 [Step 4](/step4.html)
-
+<div class="share-page">
+  Share this on &rarr;
+  <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+</div>
 <div
 class="just-comments"
 data-apikey="e3ae52cc-c19b-4c15-b6eb-2156879027b0">

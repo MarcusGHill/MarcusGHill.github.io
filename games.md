@@ -4,4 +4,4 @@ title: Games
 permalink: /games/
 ---
 
-Here i will post javascript games
+**coming soon**
