@@ -6,7 +6,7 @@ categories: First post
 author: "Marcus"
 permalink: "/step1.html"
 ---
-adding this test
+
 **In my experience the best way to learn is to try to teach others**
 that's why this blog will be dedicated to teching the DOM, javascript, HTML CSS and how to manipulate the DOM with javascript.
 This blog will be a short turtorial to DOM and javascript and what you need to know to manipulate the DOM with javascript.
