@@ -4,6 +4,6 @@
 
 layout: home
 ---
-# Blog for beginners in DOM and javascript. 
+
 
  <script src="assets/app.js"></script> 
