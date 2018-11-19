@@ -188,9 +188,11 @@ table {
 .site-header {
   border-top: 5px solid #424242;
   border-bottom: 1px solid black;
-  min-height: 4750.95px;
+  min-height: 475.95px;
   background-image: url("2.jpg");
-  position: relative; }
+  position: absolute;
+  
+}
 
 .site-title {
   font-size: 80px;
