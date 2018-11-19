@@ -190,7 +190,7 @@ table {
   border-bottom: 1px solid black;
   min-height: 475.95px;
   background-image: url("2.jpg");
-  position: absolute;
+  position: relative;
   
 }
 
