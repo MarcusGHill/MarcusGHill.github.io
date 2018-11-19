@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Step 2 How to manipulate the DOM with javascript | Marcus G Hill Examinationssida</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Step 2 How to manipulate the DOM with javascript" />
+<meta name="author" content="Marcus" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In order for javascript to know where to apply the code you write you need to use one of the many selectors. I’ll explain most of them below starting with the least interesting ones: Selector nr: 1 GETELEMENTBYID: This selector uses the css id. /*you can store the location in a variable. In this case we store the ID &quot;header-title&quot; in a varible of the same name but in camelCase*/ let headerTitle = document.getElementById(&#39;header-title&#39;) /*if you then console.log the saved variable you will see the full tag in console.*/ console.log(headerTitle); /*you can now manipulate the content within the ID. Here I add the text &#39;Hello&#39; using textContent and then change it to &#39;Goodbye, with innerText, these two are very similar, but innerText will get overwritten by style if you have a conflicting style in your html. */ headerTitle.textContent = &#39;Hello&#39;; headerTitle.innerText = &#39;Goodbye&#39;; /*with innerHTML you can insert a tag and text.*/ headerTitle.innerHTML = &#39;&lt;h3&gt;Hello&lt;/h3&gt;&#39;; /*you can also style your CSS in all possible ways*/ header.style.borderBottom = &#39;solid 3px #000&#39;; /*note that we have to change the css syntax to camelCase, so Border-bottom becomes borderBottom.*/ Selector nr: 2 GETELEMENTSBYCLASSNAME: this selector uses the css class name. It is especially useful when there is more than one element on the page with the same class since it grabs all matching class names and present them in an array-like syntax. let items = document.getElementsbyClassName(&#39;Classname-of-list&#39;) /*shows an 0-based array of the list items*/ console.log(items) /*shows the second li element*/ console.log(items[1]) /*change the text in the first li element*/ items[0].textContent = &#39;Change me&#39; /*change text to bold on the third li element*/ items[2].style.fontWeight = &#39;bold&#39; Selector nr: 3 GETELEMENTSBYTAGNAME: this will grab all the tags of matching name on the page. /* now all li&#39;s will be represented in an array-like syntax inside the variable liElements*/ let liElements = document.getElementsbyTagName(&#39;li&#39;) /*it will work as the getElementsbyClassName examples above*/ /*This is dangerous to use, if a new li element is inserted the array numbers will change. so use this with caution*/ Here comes the good stuff, pay attention Selector nr: 4 QUERYSELECTOR: This is used only for one item, and will grab the first one if there is more than one. You can use any css selector, class, ID, tag, list item. /*Grab the header by it&#39;s ID*/ let header = document.querySelector(&#39;#main-header&#39;) /*insert a border at the bottom of header*/ header.style.borderBottom = &#39;solid 4px #f4f4f4&#39; /*if you have a bunch of list elements and want to grab any other than the first one you can use &quot;:nth-child&quot;*/ let firstItem = document.querySelector(&#39;.listofstuff&#39;) firstItem.style.color = &#39;red&#39; /*note that nthchild is 1 based and not 0 based*/ let secondItem = document.querySelector(&#39;.listofstuff:nth-child(2)&#39;) secondItem.style.color = &#39;blue&#39; Selector nr: 5 QUERYSELECTORALL: Works similar to getElementsByTagName and ByClassName. It creates the array-like syntax but work on all kinds of tags, ids, classes, etc on the page. This is also better because it gets you a NodeList and we can run array functions on NodeLists! /* grab all &lt;p&gt; elements*/ let allPs = document.querySelectorAll(&#39;p&#39;) /*Bold the third paragraph*/ allPs[2].style.fontWeight = &#39;bold&#39; Step 3 // Marcus Share this on &rarr; Twitter" />
+<meta property="og:description" content="In order for javascript to know where to apply the code you write you need to use one of the many selectors. I’ll explain most of them below starting with the least interesting ones: Selector nr: 1 GETELEMENTBYID: This selector uses the css id. /*you can store the location in a variable. In this case we store the ID &quot;header-title&quot; in a varible of the same name but in camelCase*/ let headerTitle = document.getElementById(&#39;header-title&#39;) /*if you then console.log the saved variable you will see the full tag in console.*/ console.log(headerTitle); /*you can now manipulate the content within the ID. Here I add the text &#39;Hello&#39; using textContent and then change it to &#39;Goodbye, with innerText, these two are very similar, but innerText will get overwritten by style if you have a conflicting style in your html. */ headerTitle.textContent = &#39;Hello&#39;; headerTitle.innerText = &#39;Goodbye&#39;; /*with innerHTML you can insert a tag and text.*/ headerTitle.innerHTML = &#39;&lt;h3&gt;Hello&lt;/h3&gt;&#39;; /*you can also style your CSS in all possible ways*/ header.style.borderBottom = &#39;solid 3px #000&#39;; /*note that we have to change the css syntax to camelCase, so Border-bottom becomes borderBottom.*/ Selector nr: 2 GETELEMENTSBYCLASSNAME: this selector uses the css class name. It is especially useful when there is more than one element on the page with the same class since it grabs all matching class names and present them in an array-like syntax. let items = document.getElementsbyClassName(&#39;Classname-of-list&#39;) /*shows an 0-based array of the list items*/ console.log(items) /*shows the second li element*/ console.log(items[1]) /*change the text in the first li element*/ items[0].textContent = &#39;Change me&#39; /*change text to bold on the third li element*/ items[2].style.fontWeight = &#39;bold&#39; Selector nr: 3 GETELEMENTSBYTAGNAME: this will grab all the tags of matching name on the page. /* now all li&#39;s will be represented in an array-like syntax inside the variable liElements*/ let liElements = document.getElementsbyTagName(&#39;li&#39;) /*it will work as the getElementsbyClassName examples above*/ /*This is dangerous to use, if a new li element is inserted the array numbers will change. so use this with caution*/ Here comes the good stuff, pay attention Selector nr: 4 QUERYSELECTOR: This is used only for one item, and will grab the first one if there is more than one. You can use any css selector, class, ID, tag, list item. /*Grab the header by it&#39;s ID*/ let header = document.querySelector(&#39;#main-header&#39;) /*insert a border at the bottom of header*/ header.style.borderBottom = &#39;solid 4px #f4f4f4&#39; /*if you have a bunch of list elements and want to grab any other than the first one you can use &quot;:nth-child&quot;*/ let firstItem = document.querySelector(&#39;.listofstuff&#39;) firstItem.style.color = &#39;red&#39; /*note that nthchild is 1 based and not 0 based*/ let secondItem = document.querySelector(&#39;.listofstuff:nth-child(2)&#39;) secondItem.style.color = &#39;blue&#39; Selector nr: 5 QUERYSELECTORALL: Works similar to getElementsByTagName and ByClassName. It creates the array-like syntax but work on all kinds of tags, ids, classes, etc on the page. This is also better because it gets you a NodeList and we can run array functions on NodeLists! /* grab all &lt;p&gt; elements*/ let allPs = document.querySelectorAll(&#39;p&#39;) /*Bold the third paragraph*/ allPs[2].style.fontWeight = &#39;bold&#39; Step 3 // Marcus Share this on &rarr; Twitter" />
+<link rel="canonical" href="/step2.html" />
+<meta property="og:url" content="/step2.html" />
+<meta property="og:site_name" content="Marcus G Hill Examinationssida" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-11-12T11:05:44-06:00" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","headline":"Step 2 How to manipulate the DOM with javascript","dateModified":"2018-11-12T11:05:44-06:00","datePublished":"2018-11-12T11:05:44-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"/step2.html"},"url":"/step2.html","author":{"@type":"Person","name":"Marcus"},"description":"In order for javascript to know where to apply the code you write you need to use one of the many selectors. I’ll explain most of them below starting with the least interesting ones: Selector nr: 1 GETELEMENTBYID: This selector uses the css id. /*you can store the location in a variable. In this case we store the ID &quot;header-title&quot; in a varible of the same name but in camelCase*/ let headerTitle = document.getElementById(&#39;header-title&#39;) /*if you then console.log the saved variable you will see the full tag in console.*/ console.log(headerTitle); /*you can now manipulate the content within the ID. Here I add the text &#39;Hello&#39; using textContent and then change it to &#39;Goodbye, with innerText, these two are very similar, but innerText will get overwritten by style if you have a conflicting style in your html. */ headerTitle.textContent = &#39;Hello&#39;; headerTitle.innerText = &#39;Goodbye&#39;; /*with innerHTML you can insert a tag and text.*/ headerTitle.innerHTML = &#39;&lt;h3&gt;Hello&lt;/h3&gt;&#39;; /*you can also style your CSS in all possible ways*/ header.style.borderBottom = &#39;solid 3px #000&#39;; /*note that we have to change the css syntax to camelCase, so Border-bottom becomes borderBottom.*/ Selector nr: 2 GETELEMENTSBYCLASSNAME: this selector uses the css class name. It is especially useful when there is more than one element on the page with the same class since it grabs all matching class names and present them in an array-like syntax. let items = document.getElementsbyClassName(&#39;Classname-of-list&#39;) /*shows an 0-based array of the list items*/ console.log(items) /*shows the second li element*/ console.log(items[1]) /*change the text in the first li element*/ items[0].textContent = &#39;Change me&#39; /*change text to bold on the third li element*/ items[2].style.fontWeight = &#39;bold&#39; Selector nr: 3 GETELEMENTSBYTAGNAME: this will grab all the tags of matching name on the page. /* now all li&#39;s will be represented in an array-like syntax inside the variable liElements*/ let liElements = document.getElementsbyTagName(&#39;li&#39;) /*it will work as the getElementsbyClassName examples above*/ /*This is dangerous to use, if a new li element is inserted the array numbers will change. so use this with caution*/ Here comes the good stuff, pay attention Selector nr: 4 QUERYSELECTOR: This is used only for one item, and will grab the first one if there is more than one. You can use any css selector, class, ID, tag, list item. /*Grab the header by it&#39;s ID*/ let header = document.querySelector(&#39;#main-header&#39;) /*insert a border at the bottom of header*/ header.style.borderBottom = &#39;solid 4px #f4f4f4&#39; /*if you have a bunch of list elements and want to grab any other than the first one you can use &quot;:nth-child&quot;*/ let firstItem = document.querySelector(&#39;.listofstuff&#39;) firstItem.style.color = &#39;red&#39; /*note that nthchild is 1 based and not 0 based*/ let secondItem = document.querySelector(&#39;.listofstuff:nth-child(2)&#39;) secondItem.style.color = &#39;blue&#39; Selector nr: 5 QUERYSELECTORALL: Works similar to getElementsByTagName and ByClassName. It creates the array-like syntax but work on all kinds of tags, ids, classes, etc on the page. This is also better because it gets you a NodeList and we can run array functions on NodeLists! /* grab all &lt;p&gt; elements*/ let allPs = document.querySelectorAll(&#39;p&#39;) /*Bold the third paragraph*/ allPs[2].style.fontWeight = &#39;bold&#39; Step 3 // Marcus Share this on &rarr; Twitter","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Marcus G Hill Examinationssida" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Marcus G Hill Examinationssida</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About me</a><a class="page-link" href="/games/">Games</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Step 2 How to manipulate the DOM with javascript</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-11-12T11:05:44-06:00" itemprop="datePublished">Nov 12, 2018
+      </time>• <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">Marcus</span></span></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>In order for javascript to know where to apply the code you write you need to use one of the many selectors.</strong>
+I’ll explain most of them below starting with the least interesting ones:</p>
+
+<p>Selector nr: 1 GETELEMENTBYID: This selector  uses the css id.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> <span class="sr">/*you can store the location in a variable. In this case we store the ID 
+ "header-title" in a varible of the same name but in camelCase*/</span>
+<span class="n">let</span> <span class="n">headerTitle</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="nf">getElementById</span><span class="p">(</span><span class="s1">'header-title'</span><span class="p">)</span>
+
+<span class="sr">/*if you then console.log the saved variable you will see 
+the full tag in console.*/</span>
+
+<span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">headerTitle</span><span class="p">);</span>
+
+<span class="sr">/*you can now manipulate the content within the ID. Here I add the text 'Hello' 
+using textContent and then change it to 'Goodbye, with innerText, 
+these two are very similar, but innerText will  get overwritten by style if you 
+have a conflicting style in your html.  */</span>
+<span class="n">headerTitle</span><span class="p">.</span><span class="nf">textContent</span> <span class="o">=</span> <span class="s1">'Hello'</span><span class="p">;</span>
+<span class="n">headerTitle</span><span class="p">.</span><span class="nf">innerText</span> <span class="o">=</span> <span class="s1">'Goodbye'</span><span class="p">;</span>
+
+<span class="sr">/*with innerHTML you can insert a tag and text.*/</span>
+<span class="n">headerTitle</span><span class="p">.</span><span class="nf">innerHTML</span> <span class="o">=</span> <span class="s1">'&lt;h3&gt;Hello&lt;/h3&gt;'</span><span class="p">;</span>
+
+<span class="sr">/*you can also style your CSS in all possible ways*/</span>
+<span class="n">header</span><span class="p">.</span><span class="nf">style</span><span class="p">.</span><span class="nf">borderBottom</span> <span class="o">=</span> <span class="s1">'solid 3px #000'</span><span class="p">;</span>
+
+<span class="sr">/*note that we have to change the css syntax to camelCase, so Border-bottom
+becomes borderBottom.*/</span></code></pre></figure>
+
+<hr />
+
+<p>Selector nr: 2 GETELEMENTSBYCLASSNAME: this selector uses the css class name. It is especially
+useful when there is more than one element on the page with the same class since it grabs all matching class names and present them in an array-like syntax.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> <span class="n">let</span> <span class="n">items</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="nf">getElementsbyClassName</span><span class="p">(</span><span class="s1">'Classname-of-list'</span><span class="p">)</span>
+
+ <span class="sr">/*shows an 0-based array of the list items*/</span>
+ <span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+
+ <span class="sr">/*shows the second li element*/</span>
+  <span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">items</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="sr">/*change the text in the first li element*/</span>
+<span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">textContent</span> <span class="o">=</span> <span class="s1">'Change me'</span>
+
+<span class="sr">/*change text to bold on the third li element*/</span>
+<span class="n">items</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">style</span><span class="p">.</span><span class="nf">fontWeight</span> <span class="o">=</span> <span class="s1">'bold'</span></code></pre></figure>
+
+<hr />
+
+<p>Selector nr: 3 GETELEMENTSBYTAGNAME: this will grab all the tags of matching name on the page.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/* now all li's will be represented in an array-like syntax inside the
+variable liElements*/</span>
+<span class="n">let</span> <span class="n">liElements</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="nf">getElementsbyTagName</span><span class="p">(</span><span class="s1">'li'</span><span class="p">)</span>
+
+<span class="sr">/*it will work as the getElementsbyClassName examples above*/</span>
+
+<span class="sr">/*This is dangerous to use, if a new li element is inserted the array numbers
+ will change. so use this with caution*/</span></code></pre></figure>
+
+<hr />
+<p><strong>Here comes the good stuff, pay attention</strong></p>
+
+<p>Selector nr: 4 QUERYSELECTOR: This is used only for one item, and will grab the first one if there is more than one. <strong>You can use any css selector, class, ID, tag, list item.</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> <span class="sr">/*Grab the header by it's ID*/</span>
+<span class="n">let</span> <span class="n">header</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="s1">'#main-header'</span><span class="p">)</span>
+
+<span class="sr">/*insert a border at the bottom of header*/</span>
+<span class="n">header</span><span class="p">.</span><span class="nf">style</span><span class="p">.</span><span class="nf">borderBottom</span> <span class="o">=</span> <span class="s1">'solid 4px #f4f4f4'</span>
+
+<span class="sr">/*if you have a bunch of list elements and want to grab any other than the 
+first one you can use ":nth-child"*/</span>
+
+<span class="n">let</span> <span class="n">firstItem</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="s1">'.listofstuff'</span><span class="p">)</span>
+<span class="n">firstItem</span><span class="p">.</span><span class="nf">style</span><span class="p">.</span><span class="nf">color</span> <span class="o">=</span> <span class="s1">'red'</span>
+
+<span class="sr">/*note that nthchild is 1 based and not 0 based*/</span>
+<span class="n">let</span> <span class="n">secondItem</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="nf">querySelector</span><span class="p">(</span><span class="s1">'.listofstuff:nth-child(2)'</span><span class="p">)</span>
+<span class="n">secondItem</span><span class="p">.</span><span class="nf">style</span><span class="p">.</span><span class="nf">color</span> <span class="o">=</span> <span class="s1">'blue'</span>
+
+
+
+ </code></pre></figure>
+
+<hr />
+
+<p>Selector nr: 5 QUERYSELECTORALL: Works similar to getElementsByTagName and ByClassName. It creates the array-like syntax but work on all kinds of tags, ids, classes, etc on the page. This is also better because it gets you a NodeList and we can run array functions on NodeLists!</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="sr">/* grab all &lt;p&gt; elements*/</span>
+<span class="n">let</span> <span class="n">allPs</span> <span class="o">=</span> <span class="n">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="s1">'p'</span><span class="p">)</span> 
+
+<span class="sr">/*Bold the third paragraph*/</span>
+<span class="n">allPs</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">style</span><span class="p">.</span><span class="nf">fontWeight</span> <span class="o">=</span> <span class="s1">'bold'</span></code></pre></figure>
+
+<p><a href="/step3.html">Step 3</a></p>
+
+<p>// Marcus</p>
+<div class="share-page">
+  Share this on &rarr;
+  <a href="https://twitter.com/intent/tweet?text=Step 2 How to manipulate the DOM with javascript&amp;url=/step2.html&amp;via=&amp;related=" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+</div>
+<div class="just-comments" data-apikey="e3ae52cc-c19b-4c15-b6eb-2156879027b0">
+</div>
+<script async="" src="https://just-comments.com/w.js"></script>
+
+
+  </div><a class="u-url" href="/step2.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Marcus G Hill Examinationssida</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Marcus G Hill Examinationssida</li><li><a class="u-email" href="mailto:mg223hh@student.lnu.se">mg223hh@student.lnu.se</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/marcusGHill"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">marcusGHill</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>This is a blogg for beginners in javascript and how to use it to manipulate a website.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

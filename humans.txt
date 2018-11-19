@@ -1,0 +1,37 @@
+
+                            
+/* TEAM */
+
+                            
+Your title: Marcus
+
+                            
+Email: DontSpamMe@gmail.com
+
+                         
+                 
+   		
+							
+/* THANKS */
+
+							
+Name: Lnu.se
+
+						 
+                 
+                        
+
+                            
+/* SITE */
+
+                            
+Last update: 2018/04/25 
+
+                            
+Standards: HTML5, CSS3,
+
+                            
+Components: Javascript, HTML, Css
+
+                            
+Software: Jekyll
